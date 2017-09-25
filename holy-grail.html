@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        .HolyGrail {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        .HolyGrail-header,
+        .HolyGrail-footer {
+            flex: none;
+        }
+
+        .HolyGrail-body {
+            display: flex;
+            flex: 1 0 auto;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .HolyGrail-content {
+            margin-top: 10px;
+        }
+
+        .HolyGrail-nav {
+            order: -1;
+        }
+
+        .HolyGrail-nav,
+        .HolyGrail-ads {
+            padding: 1em;
+            border-radius: 3px;
+            background: red;
+        }
+
+        @media(min-width: 768px) {
+            .HolyGrail-body {
+                flex-direction: row;
+            }
+
+            .HolyGrail-content {
+                flex: 1;
+                padding: 0 10px;
+                margin: 0;
+            }
+
+            .HolyGrail-nav, .HolyGrail-ads {
+                flex: 0 0 12em;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body class="HolyGrail">
+    <header>
+        Header
+    </header>
+
+    <div class="HolyGrail-body">
+        <main class="HolyGraid-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam est ipsa laborum, ratione fuga sapiente atque ad. Odio iste debitis, libero reiciendis ipsum illum expedita in sapiente explicabo rem suscipit?
+        </main>
+
+        <nav class="HolyGrail-nav">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum architecto, excepturi dolorem cum, facere perferendis eaque alias, porro optio vitae nulla debitis doloribus tempore culpa repudiandae magnam reiciendis ipsa autem.
+        </nav>
+
+        <aside class="HolyGrail-ads">
+            Lorem   
+        </aside>
+    </div>
+</body>
+</html>
