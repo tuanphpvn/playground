@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get started</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+
+    <style>
+
+        @charset "UTF-8";
+        /* This used for is-loading */
+        @keyframes spinAround {
+            from {
+                transform: rotate(0deg); }
+            to {
+                transform: rotate(359deg); } }
+
+        .button {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            align-items: center;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            box-shadow: none;
+            display: inline-flex;
+            font-size: 1rem;
+            height: 2.25em;
+            justify-content: flex-start;
+            line-height: 1.5;
+            padding-bottom: calc(0.375em - 1px);
+            padding-left: calc(0.625em - 1px);
+            padding-right: calc(0.625em - 1px);
+            padding-top: calc(0.375em - 1px);
+            position: relative;
+            vertical-align: top;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-color: white;
+            border-color: #dbdbdb;
+            color: #363636;
+            cursor: pointer;
+            justify-content: center;
+            padding-left: 0.75em;
+            padding-right: 0.75em;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .button:hover,
+        .button.is-hovered {
+            border-color: #b5b5b5;
+            color: #363636;
+        }
+
+        .button:focus {
+            outline: none;
+        }
+
+        .button:focus:not(:active) {
+            box-shadow:  0 0 0 0.125em rgba(255, 179, 179, 0.25);
+        }
+
+        .button:active, .button.is-active {
+            border-color: #4a4a4a;
+            color: #363636;
+        }
+
+        /** Primary part */
+        .button.is-primary {
+            background-color: #ffb3b3;
+            border-color: transparent;
+            color: #fff;
+        }
+
+
+        .button.is-primary:active {
+            background-color: #ff9a9a;
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .button.is-primary:hover {
+            background-color: #ffa6a6;
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .button.is-primary:focus {
+            border-color: transparent;
+            color: #fff;
+        }
+        .button.is-primary:focus:not(.active) {
+            box-shadow: 0 0 0 0.126em rgba(255, 179, 179, 0.25);
+        }
+
+        /* Info part */
+        .button.is-info {
+            background-color: #72d0eb;
+            border-color: transparent;
+            color: rgba(0, 0, 0 , 0.7);
+        }
+
+        .button.is-info:active {
+            background-color: #5cc9e8;
+            border-color: transparent;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .button.is-info:hover {
+            background-color: #67cce9;
+            border-color: transparent;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .button.is-info:focus{
+            border-color: transparent;
+            color: rgba(0, 0 , 0, 0.7);
+        }
+
+        .button.is-info:focus:not(.active) {
+            box-shadow: 0 0 0 0.125em rgba(114, 208, 235, 0.25);
+        }
+        
+
+        /** Is small button */
+        .button.is-small {
+            border-radius: 2px;
+            font-size: 0.7rem;
+        }
+
+        .button.is-medium {
+            font-size: 1.25rem;
+        }
+
+        .button.is-large {
+            font-size: 1.5rem;
+        }
+
+        /* Button with style */
+        .button.is-primary.is-outlined{
+            background-color: transparent;
+            border-color: #ffb3b3;
+            color: #ffb3b3;
+        }
+
+        .button.is-primary.is-outlined:hover, .button.is-primary.is-outlined:focus  {
+            background-color: #ffb3b3;
+            border-color: #ffb3b3;
+            color: #fff;
+        }
+
+        .button.is-loading {
+            color: transparent !important;
+            pointer-events: none; 
+        }
+        .button.is-loading:after {
+            animation: spinAround 500ms infinite linear;
+            border: 2px solid #dbdbdb;
+            border-radius: 290486px;
+            border-right-color: transparent;
+            border-top-color: transparent;
+            content: "";
+            display: block;
+            height: 1em;
+            position: relative;
+            width: 1em;
+            position: absolute;
+            left: calc(50% - (1em / 2));
+            top: calc(50% - (1em / 2));
+            position: absolute !important; }
+        .button[disabled] {
+            background-color: white;
+            border-color: #dbdbdb;
+            box-shadow: none;
+            opacity: 0.5;
+        }
+
+    </style>
+</head>
+<body>
+<a href="#" class="button">
+    This is button
+</a>
+
+<a href="" class="button is-primary">This is primary button</a>
+
+<a href="javascript:void(0);" class="button is-info">This is info button</a>
+
+<a href="" class="button is-small">This is small button</a>
+
+<a href="" class="button is-medium">This is medium button</a>
+
+<a href="" class="button is-primary is-outlined">
+    Button is outlined
+</a>
+
+<a href="javascript:void(0);" class="button is-loading"></a>
+
+<a href="" class="button" disabled >Disabled button</a>
+</body>
+</html>
