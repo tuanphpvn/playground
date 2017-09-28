@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is twitter container</title>
+
+    <link rel="stylesheet" href="new-bootstrap.css">
+
+    <style>
+        .tw .tw-col,
+        .tw [class^=tw-col] {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            background-color: rgba(86, 61, 124, .15);
+            border: 1px solid rgba(86, 61, 124, .2);
+        }
+
+        .tw .my-demo-alignment .tw-row {
+            min-height: 10rem;
+            background-color: rgba(255,0,0,.1);
+        }
+    </style>
+</head>
+<body class="tw">
+    <div class="tw-container">
+        <div class="tw-row">
+            <div class="tw-col tw-col-sm-4">One of three column</div>
+            <div class="tw-col tw-col-sm-4">One of three column</div>
+            <div class="tw-col tw-col-sm-4">One of three column</div>
+        </div>
+    </div>
+
+    <div class="tw-container">
+        <div class="tw-row">
+            <div class="tw-col tw-col">1 of 2</div>
+            <div class="tw-col tw-col">1 of 2</div>
+        </div>
+
+        <div class="tw-row">
+            <div class="tw-col">1 of 3</div>
+            <div class="tw-col">1 of 3</div>
+            <div class="tw-col">1 of 3</div>
+        </div>
+    </div>
+
+    <div class="tw-container">
+        <div class="tw-row">
+            <div class="tw-col">
+                1 of 3
+            </div>
+            <div class="tw-col-6">
+                2 of 3
+            </div>
+
+            <div class="tw-col">
+                3 of 3
+            </div>
+        </div>
+    </div>
+
+    <div class="tw-container">
+        <div class="tw-row tw-justify-content-md-center">
+            <div class="tw-col tw-col-lg-2">
+                1 of 3
+            </div>
+
+            <div class="tw-col-md-auto">
+                variable width content
+            </div>
+
+            <div class="tw-col tw-col-lg-2">
+                3 0f 3
+            </div>
+        </div>
+
+        <div class="tw-row">
+            <div class="tw-col">
+                1 of 3
+            </div>
+            <div class="tw-col-md-auto">
+                Variable width content
+            </div>
+            <div class="tw-col tw-col-lg-2">
+                3 of 3
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Equal with multiple rows-->
+    <div class="tw-container">
+        <div class="tw-row">
+            <div class="tw-col">col</div>
+            <div class="tw-col">col</div>
+            <div class="tw-w-100"></div>
+            <div class="tw-col">col</div>
+            <div class="tw-col">col</div>
+        </div>
+    </div>
+
+    <!-- All breakpoints-->
+    <div class="tw-container">
+        <div class="tw-row">
+            <div class="tw-col">col</div>
+            <div class="tw-col">col</div>
+            <div class="tw-col">col</div>
+            <div class="tw-col">col</div>
+            <div class="tw-col">col</div>
+            <div class="tw-col">col</div>
+        </div>
+
+
+        <div class="tw-row">
+            <div class="tw-col-8">
+                col-8
+            </div>
+
+            <div class="tw-col-4">
+                col-4
+            </div>
+        </div>
+
+        <!-- Stacked to horizontal -->
+        <div class="tw-row">
+            <div class="tw-col-sm-8">col-sm-8</div>
+            <div class="tw-col-sm-4">col-sm-4</div>
+        </div>
+
+        <div class="tw-row">
+            <div class="tw-col-sm">col-sm-8</div>
+            <div class="tw-col-sm">col-sm-4</div>
+            <div class="tw-col-sm">col-sm-4</div>
+        </div>
+
+        <div class="tw-row">
+            <div class="tw-col-12 tw-col-md-8">
+                .col-12 .col-md-8
+            </div>
+        </div>
+
+        <div class="tw-row">
+            <div class="tw-col-6 tw-col-md-4">.col-6 .col-md-4</div>
+            <div class="tw-col-6 tw-col-md-4">.col-6 .col-md-4</div>
+            <div class="tw-col-6 tw-col-md-4">.col-6 .col-md-4</div>
+        </div>
+
+        <div class="tw-row">
+            <div class="tw-col-6">.col-6</div>
+            <div class="tw-col-6">.col-6</div>
+        </div>
+
+    </div>
+
+    <div class="tw-container my-demo-alignment">
+        <h1>Align item</h1>
+
+        <div class="tw-row tw-align-items-start">
+            <div class="tw-col">
+                One of three columns
+            </div><div class="tw-col">
+                One of three columns
+            </div><div class="tw-col">
+                One of three columns
+            </div>
+        </div>
+    </div>
+
+    <div class="tw-container my-demo-alignment">
+        <h2>Self tag</h2>
+
+        <div class="tw-row">
+            <div class="tw-col tw-align-self-start">
+                One of three columns
+            </div><div class="tw-col tw-align-self-center">
+                One of three columns
+            </div><div class="tw-col tw-align-self-end">
+                One of three columns
+            </div>
+        </div>
+    </div>
+
+    <div class="tw-container my-demo-alignment">
+        <h2>Horizontal alignment</h2>
+
+        <div class="tw-row tw-justify-content-start">
+            <div class="tw-col-4">
+                1 of 2
+            </div><div class="tw-col-4">
+                1 of 2
+            </div>
+        </div>
+
+        <div class="tw-row tw-justify-content-center">
+            <div class="tw-col-4">
+                1 of 2
+            </div><div class="tw-col-4">
+                1 of 2
+            </div>
+        </div>
+
+    </div>
+
+    <div class="tw-container">
+        <h2>No Gutters</h2>
+
+        <div class="tw-row tw-no-gutters">
+            <div class="tw-col-12 tw-col-sm-6 tw-col-md-8">
+                .col-12 .col-sm-6 .col-md-8
+            </div>
+
+            <div class="tw-col-6 tw-col-md-4">
+                .col-6 .col-md-4
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tw-container">
+        <h2>Column resets</h2>
+
+        <div class="tw-row">
+            <div class="tw-col-6 tw-col-sm-3">
+                tw-col-6 tw-col-sm-3
+            </div>
+            <div class="tw-col-6 tw-col-sm-3">
+                tw-col-6 tw-col-sm-3
+            </div>
+
+            <div class="tw-clearfix tw-d-none tw-d-sm-block"></div>
+
+            <div class="tw-col-6 tw-col-sm-3">
+                .col-6.col-sm-3
+            </div><div class="tw-col-6 tw-col-sm-3">
+            .col-6.col-sm-3
+        </div>
+        </div>
+    </div>
+
+    <div class="tw-container">
+        <div class="tw-row">
+            <div class="tw-col-sm-5 tw-col-md-6">
+                tw-col-sm-5 tw-col-md-6
+            </div>
+
+            <div class="tw-col-sm-5 tw-offset-sm-2 tw-col-md-6 tw-offset-md-0">
+                tw-col-sm-5 tw-offset-sm-2 tw-col-md-6 tw-offset-md-0
+            </div>
+        </div>
+
+        <div class="tw-row">
+            <div class="tw-col-sm-6 tw-col-md-5 tw-col-lg-6">
+                tw-col-sm-6 tw-col-md-5 tw-col-lg-6
+            </div>
+
+            <div class="tw-col-sm-6 tw-col-md-5 tw-offset-md-2 tw-col-lg-6 tw-offset-lg-0">
+                tw-col-sm-6 tw-col-md-5 tw-offset-md-2 tw-col-lg-6 tw-offset-lg-0
+            </div>
+        </div>
+    </div>
+
+    <div class="tw-container">
+        <h2>Order</h2>
+        <div class="tw-row">
+            <div class="tw-col">First, but unordered</div>
+            <div class="tw-col tw-order-12">second but last</div>
+            <div class="tw-col tw-order-1">Third, but first</div>
+        </div>
+    </div>
+
+
+    <div class="tw-container">
+        <h2>Offset classes</h2>
+
+        <div class="tw-row">
+            <div class="tw-col-md-4">.tw-col-md-4</div>
+            <div class="tw-col-md-4 tw-offset-md-4">.tw-col-md-4.tw-offset-md-4</div>
+        </div>
+
+        <div class="tw-row">
+            <div class="tw-col-md-3 tw-offset-md-3">.tw-md-3.tw-offset-md-3</div>
+            <div class="tw-col-md-3 tw-offset-md-3">.tw-md-3.tw-offset-md-3</div>
+        </div>
+
+        <div class="tw-row">
+            <div class="tw-col-md-6 tw-offset-md-3">.tw-md-6.tw-offset-md-3</div>
+        </div>
+    </div>
+
+    <div class="tw-container">
+        <h2>Margin utitilies</h2>
+
+        <div class="tw-row">
+            <div class="tw-col-md-4">.tw-col-md-4</div>
+            <div class="tw-col-md-4 tw-ml-auto">end</div>
+        </div>
+
+        <div class="tw-row">
+            <div class="tw-col-md-3 tw-ml-md-auto">tw-col-md-3 tw-ml-md-auto</div>
+            <div class="tw-col-md-3 tw-ml-md-auto">tw-col-md-3 tw-ml-md-auto</div>
+        </div>
+
+        <div class="tw-row">
+            <div class="tw-col-auto tw-mr-auto">col-auto mr-auto</div>
+            <div class="tw-col-auto">col-auto</div>
+        </div>
+    </div>
+
+    <div class="tw-container">
+        <div class="tw-row">
+            <div class="tw-col-sm-9">
+                Level 1: .col-sm-9
+
+                <div class="tw-row">
+                    <div class="tw-col-8 tw-col-sm-6">
+                        Level 2 col-8 and col-sm-6
+                    </div>
+                    <div class="tw-col-4 tw-col-sm-6">
+                        Level 2: col-4 col-sm-6
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
