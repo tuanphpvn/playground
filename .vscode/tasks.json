@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "taskName": "build hello world",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g", "c-lang/get-started.c","-o","c-lang/get-started"
+            ]
+        }
+    ]
+}
