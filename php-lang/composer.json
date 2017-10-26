@@ -1,0 +1,12 @@
+{
+    "name": "t/php-lang",
+    "authors": [
+        {
+            "name": "tuanphpvn",
+            "email": "tuanphpvn@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "6.4"
+    }
+}
