@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Định nghĩa một element trong HTML document</title>
+
+    <script src="../../polymer-lite.js"></script>
+
+    
+</head>
+<body>
+    <p>
+        Note: Bạn chỉ định nghĩa element trong main document nếu có kinh nghiệm, Trong production. bạn nên định nghĩa nó riêng biệt. và import nó vào trong main element
+    </p>
+
+    <p>
+        Để định nghĩa một element trong main HTML document, định nghĩa element từ HTMLIMports.whenReady(callback).callback được gọi khi tất cả import trong document đã kết thúc việc load. Nhìn vào trong source code để biết thêm chi tiết:
+    </p>
+
+    <link rel="import" href="../../polymer/polymer.html">
+    <dom-module id="main-document-element">
+        <template>
+            <p>
+                Hi! I'm a Polymer. I am defined in main document!
+            </p>
+        </template>
+        <script>
+            HTMLImports.whenReady(function() {
+                Polymer({
+                    is: 'main-document-element'
+                })
+            });
+        </script>
+    </dom-module>
+
+    <main-document-element></main-document-element>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<link rel="import" href="../../polymer/polymer.html">
+
+<dom-module id="my-element">
+    <template>
+        This is foo {{foo}}
+    </template>
+
+    <script>
+        var MyElement = Polymer({
+            is: 'my-element',
+            factoryImpl: function(foo, bar) {
+                console.log('factoryImpl called')
+                this.foo = foo;
+                this.bar = bar;
+            },
+            configureWithBar: function(bar) {
+                console.log('configure with bar');
+            }
+
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,40 @@
+<link rel="import" href="../../polymer/polymer.html">
+
+<dom-module id='my-element'>
+    <template>
+
+    </template>
+
+    <script>
+        Polymer({
+            is: 'my-element',
+            create: function() {
+
+            },
+            
+
+            created: function() {
+                console.log('this element has created');
+            },
+
+            ready: function() {
+                console.log('this element ready');
+            },
+
+
+            attached: function() {
+                console.log('this element has been attached');
+            },
+
+            detached: function() {
+                console.log('delete element from html')
+            },
+
+            attributeChanged: function(name) {
+                console.log('the attribute get changed');
+            }
+
+        });
+    </script>
+    
+</dom-module>

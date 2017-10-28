@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Extend native HTML elements</title>
+
+    <script src="../../polymer-lite.js"></script>
+    <link rel="import" href="my-input.html">
+
+    <script>
+        var el = new MyInput();
+        console.log('myInput có phải là instance của HTMLInputElement không ===>', el instanceof HTMLInputElement);
+    </script>
+</head>
+<body>
+    
+    <p>
+        Hiện tại polymer 1 chỉ hổ trợ mở rộng native html element ( ví dụ như input, button ). Đó là những extension và nó được gọi là "type extension custom elements"
+    </p>    
+
+    <p>
+        Ghi chú: Khi sử dụng native shadow dom, mở rộng một native element có thể dẩn đến unexpect behaiviour và đôi khi là không được phép. 
+        Hảy test element của bạn với native shadow dom để bắt các lổi có thể gặp trong lúc phát triển phần mềm
+    </p>
+
+    <p>
+        Để sử dụng type-extension trong markup sử dụng native tag and thêm một is attribute cái đó để cụ thể tên của loại extension ví dụ như:
+
+        <input is="my-input">
+    </p>
+</body>
+</html>

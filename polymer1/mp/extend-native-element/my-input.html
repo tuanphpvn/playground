@@ -1,0 +1,19 @@
+<link rel="import" href="../../polymer/polymer.html">
+<dom-module id="my-input">
+    <template>
+
+
+    </template>
+
+    <script>
+        MyInput = Polymer({
+            is: 'my-input',
+            extends: 'input',
+            created: function() {
+                this.style.border = '1px solid red';
+
+                console.log('My-input element đã được tạo ra');
+            }
+        });
+    </script>
+</dom-module>

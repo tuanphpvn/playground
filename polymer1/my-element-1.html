@@ -1,0 +1,19 @@
+<link rel="import" href="polymer/polymer.html">
+<!-- define the markup that your element will use -->
+<dom-module id="my-element-1">
+  
+    <script>
+      Polymer({
+          is: 'my-element-1',
+          ready: function() {
+            this.textContent = 'Hello all the world!';
+          },
+          properties: {
+              name: {
+                  type: String,
+                  value: 'Tuan'
+              }
+          }
+      });
+    </script>
+  </dom-module>

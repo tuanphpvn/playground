@@ -1,0 +1,21 @@
+<link rel="import" href="polymer/polymer.html">
+<!-- define the markup that your element will use -->
+<dom-module id="my-element">
+    <template>
+      <div>
+        Hi! My name is <span>[[name]]</span>
+      </div>
+    </template>
+  
+    <script>
+      Polymer({
+          is: 'my-element',
+          properties: {
+              name: {
+                  type: String,
+                  value: 'Tuan'
+              }
+          }
+      });
+    </script>
+  </dom-module>

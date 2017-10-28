@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <script src="../../polymer-lite.js"></script>
+
+    <link rel="import" href="my-element.html">
+
+    <script>
+        var el = new MyElement(42, 'bar');
+    </script>
+</head>
+<body>
+    <p>factoryImpl chỉ được gọi khi tạo một element sử dụng constructor.        
+        phương thúc factoryImpl  sẻ không được gọi nếu element được tạo từ markup bởi HTML parser hoặc là element được tạo bởi document.createElement
+    </p>
+
+    <p>
+        Phương thức factoryImpl được gọi sao khi element được khởi tạo ( localDom đ8ược tạo và các giá trị được set). 
+    </p>
+    
+</body>
+</html>

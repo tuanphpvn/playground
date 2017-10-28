@@ -1,0 +1,26 @@
+<link rel="import" href="polymer/polymer.html">
+<link rel="import" href="iron-input/iron-input.html">
+<!-- define the markup that your element will use -->
+<dom-module id="editable-name-tag">
+    <template>
+        <div>
+                Hello {{name}}
+        </div>
+        <div>
+                <input is="iron-input" type="text" bind-value="{{name}}">
+        </div>
+      
+    </template>
+  
+    <script>
+      Polymer({
+          is: 'editable-name-tag',
+          properties: {
+              name: {
+                  type: String,
+                  value: 'Tuan'
+              }
+          }
+      });
+    </script>
+  </dom-module>

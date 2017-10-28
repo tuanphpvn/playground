@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo about lifecycle callback</title>
+
+    <script src="../../polymer-lite.js"></script>
+
+    <link rel="import" href="my-element.html">
+</head>
+<body>
+    <p>
+        Polymer's Base định nghĩa chuẩn về custome element lifecycle callback để tiến hành những task cần thiết cho việc xây dựng những tính năng có sẳng. 
+    </p>
+    <p>
+        Polymer thêm một callback là ready nó sẽ đư8ợc gọi khi mà polymer đả finish việc tạo vào initializng local Dom của elmeent
+    </p>
+
+    <p>
+        Created: Được gọi khi mà element được tạo ra nhưng trước khi những giá trị được set được set và localDom được tạo ra.
+    </p>
+
+    <p>
+        ready: Được tạo sao khi giá trị được set và local dom được init
+    </p>
+
+    <p>
+        attached: Được tạo sao khi element được attachted to the maindocument. Nó được gọi nhiều lần trong lifetime của một lemenet. Lần đầu tiên được gọi đảm bảo sau khi ready cycle
+    </p>
+
+    <p>
+        detached: Được gọi sao khi domElement gở khỏi document. Có thể được gọi nhiều lần trong life cycle.
+        uses include removing event listeners được thêm trong attached
+    </p>
+
+    <p>
+        attributeChanged: Được gọi khi một trong các thuộc tính của element thay đổi.
+        Sử dụng để handle thuộc tính thay đổi không liên quan để các thuộc tính đả được khai báo.
+    </p>
+
+    <p>
+        Ready callback and local Dom init
+
+        ready callback được gọi khi mà local dom đả được init
+
+        localdom là subtree được tạo và quản lý bởi element. Nó phân biệt với element children. Dom của element được gọi là light dom. 
+
+        Một element ready khi:
+
+        Những thuộc tính đã được cấu hình và những giá trị bound từ parent. deserialized từ thuộc tính value. hoặc là những giá trị default của nó.
+
+        2 ) lOcal dom đả được khởi tạo.
+        3 ) Tất cả element đã được đăng kí bên trong local DOm và tất cả những ready method của các element con đã được gọi.
+    </p>
+
+    <p>
+        Trong cái cây cho trước, reaqdy nói chung được gọi theo document order. Nhưng nó không phụ thuộc vào thứ tự của initalize callback giửa các element là anh em, hoặc giữa host và lightDOM children.
+    </p>
+
+    <div>
+        <h1>Thứ tự và thời gian</h1>
+        <p>
+            Thừ tự khởi tạo cho các element là:
+            1) created 
+            2) local Dom được khởi tạo ( localDom children được tạo, và thuộc tính của nó được set trontg template, và ready được gọi trên chúng)
+            3) ready callback
+            4) factoryImpl callback
+            5) attached callback
+        </p>
+
+        <p>
+            Local DOM children chỉ có ready được gọi khi mà chúng đăng ký custom element. nếu mà một child local Dom được gọi sau, nó được tạo và ready method được gọi khi child upgrades, khi không có delay host' reaming callbacks. Thêm những sources trước khi chúng được sử dụng khi đó các element được tạo theo thứ tự
+        </p>
+
+        <p>
+            Ghi chú rằng life cycle callback liệt kê ở trên sẻ được gọi theo thứ tự mô tả cho elemnt cho trước (given). Thời gian khở tạo giữa các element là khác nhau, bao gòm browser include native element.
+        </p>
+
+        <h2>
+            Init timing for light DOM children
+        </h2>
+
+        <div>
+            Không có sự đảm bảo về thời gian khởi tạo của những DOM children. Nói chung những element được khởi tạo trong document order. vì vậy children init after their parents.
+        </div>
+
+        <p>
+            Element cha sẽ ready trước các elment con. 
+            Thêm vào add light children bất cứ lúc nào sao khi parent element đã được tạo. Một thiết kế tốt xử lý light DOm lúc runtime.
+            Để tránh vấn đề về timing issue có thể dùng những strategies sau:
+                .Xữ lý light dom lazily. Ví dụ một popup menu có thể đếm số lightDOm children. Bằng cách đếm menu của nó khi open. Nó có thể handle khi add hoặc remove menu items với minimal overhead
+                . Sử dụng observeNodes
+        </p>
+
+        <p>
+            Ready của element child được gọi trước khi  parent child được gọi.
+            <p>
+                Có 2  loại caveats:
+                <p>
+                    dom-repeat và dom-if template tạo dom async sau khi những thuộc tính của chúng được cập nhật. Ví dụ như dom-repeat trong local Dom của element , ready callback được gọi trước khi dom-repeat hoàng thành việc tạo instance.
+
+                </p>
+
+                <p>
+                    Nếu bạn muốn biết khi một dom-repeat hoặc dom-if tạo hoặc bị remove, sử dụng event dom-change. 
+                </p>
+
+                <p>
+                    Polymer đảm bảo ready của element con được gọi trước element cha. Tuy nhiên, nó không đảm bảo attached được gọi trước attached của parent. Đây là một sự khác biệt giửa native behavior và polyfil behavior.
+                </p>
+            </p>
+        </p>
+
+        <p>
+            Không có sử đảm bảo về thời gian khởi tạo của sibling elements.
+        </p>
+
+        <p>
+            Nghĩa là sibling có thể trờ thành ready theo bất cứ order nào
+        </p>
+
+        <p>
+            Để access một sibling elmeent khi một element được init, có thể gọi async từ attached element.
+        </p>
+
+        <h2>Registration callback</h2>
+
+        <p>
+            Polymer cung cấp 2 registration time callbacks, beforeRegister và registed
+        </p>
+
+        <p>Sử dụng beforeRegister để transform một elmeent prototype trước khi registraion. Đây là một lơi thế khi đăng ký một element sử dụng một ES6</p>
+
+        <p>
+            Bạn có thể cài đặt registered callback để cài đặc onetime init khi element được đặng ký. Nó rất hửu dụng khi impelement behaivour
+        </p>
+
+        <h2>Static attributes on host</h2>
+
+        <p>
+            Nếu một custom element cần hMLT attribute được set trên nó lúc created-time. attributes phải được declared hostAtributes property on the prototype, trong khi keys là attribute names và values là những value được assign. Những value cung cấp nên là string tuy nhiên serialize cung cấp có thể translate value tos tring vì vậy, true will be serialize tới empty attribute, false sẽ là không set attribute đó. 
+        </p>
+
+        <h2>Behaviors</h2>
+
+        <p>
+            những element có thể share code theo dạng behaviors, có thể định nghĩa những thuộc tính, lifecycle callbacks, event listeners và các thuộc tính khác.
+        </p>
+
+        <h2>Class style constructor</h2>
+
+        <p>
+            Nếu bạn muốn setup custom element's prototype chain nhưng không muốn đăng ký nó ngay lập tức, có thể sữ dụng Polymer.Class. Polymer.Class sữ dụng giống như là Polymer function và cài đặt prototype chain nhưng không đăng ký elmeent. thay vào đó nó return một constructor và có thể gọi thông qua document.regiterElement để đăng ký element với browser. 
+            nếu bạn muốn định nghĩa và đăng ký dùng Polymer function.
+        </p>
+    </div>
+
+    <p>
+        Nhìn vào code để thấy các ví dụ:
+    </p>
+
+    <my-element id="e">
+    </my-element>
+
+    <my-element id="e1"></my-element>
+    
+</body>
+</html>
