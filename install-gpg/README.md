@@ -6,9 +6,11 @@ Note: Use Libgcrypt(1.7.4)
 
 ### Generate key
 
-1) gpg2 --gen-key
+1) gpg-agent --daemon --pinentry-program /usr/local/bin/pinentry
 
-2) gpg2 --list-secret-keys --keyid-format LONG
+2) gpg2 --gen-key
+
+3) gpg2 --list-secret-keys --keyid-format LONG
 
 Example Output:
 
