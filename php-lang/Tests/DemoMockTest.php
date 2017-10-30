@@ -121,6 +121,13 @@ class DemoMockTest extends \PHPUnit\Framework\TestCase
         $subject->doSomething();
     }
 
+    public function testExpectNeverCall() {
+        $stub = $this->createMock(SomeClass::class);
+
+        $stub->expectNeverCalled()
+            ->method('doSomething');
+    }
+
 }
 
 class SomeClass
