@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo filter function</title>
+
+    <script>
+        var arr = [
+            {
+                id: '1',
+                isFinish: 'yes'
+            },
+            {
+                id: '2',
+                isFinish: 'yes'
+            },
+            {
+                id: '3',
+                isFinish: 'yes'
+            },
+            {
+                id: '4',
+                isFinish: 'yes'
+            },
+            {
+                id: '5',
+                isFinish: 'yes'
+            },
+            {
+                id: '6',
+                isFinish: 'yes'
+            }
+        ];
+
+        var arrNo = arr.filter(function(value) {
+            return value.isFinish === 'no';
+        }).pop();
+
+        console.log(arrNo);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

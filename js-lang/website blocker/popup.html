@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Simple block website</title>
+    
+    <style type="text/css">
+      body {
+        margin: 10px;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      #container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="./popup.js"></script>
+  </head>
+
+  <body>
+    <h1>Block websites</h1>
+    <div id="container">
+      
+      <textarea name="listwebiste" id="listwebsite" cols="30" rows="10">sexywebsite.com</textarea>
+
+        <input type="submit" id="submit" value="Save" />
+      
+      
+    </div>
+  </body>
+</html>
