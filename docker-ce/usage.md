@@ -8,5 +8,6 @@ docker images # list images
 docker rmi -f <imageid> # force remove image
 
 docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
 
 systemctl stop docker #stop docker
